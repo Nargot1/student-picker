@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="student_picker.Views.ClassDetailPage"
+             Title="{Binding Name}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <VerticalStackLayout StyleId="lucky-section" Spacing="8">
+                <Label StyleClass="section-title" Text="Szczęśliwy numerek" />
+                <Label StyleId="lucky-value"
+                       Text="{Binding LuckyNumber}"
+                       HorizontalOptions="Center" />
+                <Label StyleClass="lucky-badge"
+                       Text="Uczeń z tym numerkiem jest dziś bezpieczny!"
+                       HorizontalOptions="Center" />
+                <Button StyleClass="btn-secondary"
+                        Text="Wylosuj szczęśliwy numerek"
+                        Clicked="OnGenerateLuckyNumber" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout StyleId="pick-section" Spacing="8">
+                <Button StyleClass="btn-pick"
+                        Text="Wylosuj ucznia"
+                        Clicked="OnPickStudent" />
+                <Label StyleId="pick-result-text"
+                       x:Name="PickResultLabel"
+                       Text=""
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="4">
+                <Label StyleId="attendance-header" Text="Lista uczniów i obecność" />
+
+                <CollectionView ItemsSource="{Binding Students}"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout StyleClass="student-row" Spacing="4">
+                                <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                                    <Label StyleClass="student-number"
+                                           Text="{Binding Id, StringFormat='#{0}'}"
+                                           VerticalOptions="Center"
+                                           WidthRequest="40" />
+                                    <Label StyleClass="student-name"
+                                           Text="{Binding Name}"
+                                           VerticalOptions="Center" />
+                                    <Label StyleClass="student-name"
+                                           Text="{Binding LastName}"
+                                           VerticalOptions="Center" />
+                                    <Switch IsToggled="{Binding IsPresent, Mode=TwoWay}"
+                                            VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="8">
+                                    <Label StyleClass="cooldown-label"
+                                           IsVisible="{Binding ShowPause}"
+                                           Text="{Binding PickCooldown, StringFormat='Pauza: {0}'}" />
+                                    <Label StyleClass="absent-label"
+                                           IsVisible="{Binding IsAbsent}"
+                                           Text="Nieobecny" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="4">
+                                    <Button StyleClass="btn-secondary"
+                                            Text="Edytuj"
+                                            Clicked="OnEditStudent"
+                                            CommandParameter="{Binding .}"
+                                            HeightRequest="36"
+                                            FontSize="12" />
+                                    <Button StyleClass="btn-danger"
+                                            Text="Usuń"
+                                            Clicked="OnRemoveStudent"
+                                            CommandParameter="{Binding .}"
+                                            HeightRequest="36"
+                                            FontSize="12" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label StyleClass="empty-text"
+                               Text="Brak uczniów. Dodaj uczniów poniżej!"
+                               HorizontalOptions="Center" />
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout StyleId="add-student-section" Spacing="8">
+                <Label StyleClass="section-title" Text="Dodaj ucznia" />
+                <Entry x:Name="FirstNameEntry"
+                       Placeholder="Imię" />
+                <Entry x:Name="LastNameEntry"
+                       Placeholder="Nazwisko" />
+                <Button StyleClass="btn-primary"
+                        Text="Dodaj ucznia"
+                        Clicked="OnAddStudent" />
+            </VerticalStackLayout>
+
+            <Button StyleClass="btn-secondary"
+                    Text="Zapisz klasę"
+                    Clicked="OnSaveClass" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

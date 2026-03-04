@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="student_picker.Views.MainPage"
+             Title="Losowanie uczniów">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Label StyleId="main-title"
+                   Text="Losowanie uczniów"
+                   HorizontalOptions="Center" />
+
+            <Label StyleClass="section-title"
+                   Text="Klasy" />
+
+            <VerticalStackLayout StyleId="class-list-area" Spacing="8">
+                <CollectionView x:Name="ClassList"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout StyleClass="card" Spacing="6">
+                                <HorizontalStackLayout Spacing="8">
+                                    <Label StyleClass="card-title"
+                                           Text="{Binding Name}"
+                                           VerticalOptions="Center" />
+                                    <Label StyleClass="card-subtitle"
+                                           Text="{Binding StudentCount, StringFormat='({0} uczniów)'}"
+                                           VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="8">
+                                    <Button StyleClass="btn-primary"
+                                            Text="Otwórz"
+                                            Clicked="OnOpenClassClicked"
+                                            CommandParameter="{Binding .}" />
+                                    <Button StyleClass="btn-danger"
+                                            Text="Usuń"
+                                            Clicked="OnDeleteClassClicked"
+                                            CommandParameter="{Binding .}" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label StyleClass="empty-text"
+                               Text="Brak klas. Dodaj pierwszą klasę!"
+                               HorizontalOptions="Center" />
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout StyleClass="card" Spacing="8">
+                <Label StyleClass="section-title"
+                       Text="Dodaj klasę" />
+                <Entry x:Name="NewClassNameEntry"
+                       Placeholder="Nazwa klasy (np. 3A)" />
+                <Button StyleClass="btn-primary"
+                        Text="Dodaj klasę"
+                        Clicked="OnAddClassClicked" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

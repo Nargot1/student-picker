@@ -1,0 +1,227 @@
+shell {
+    background-color: #1a1a2e;
+    color: #C3C3C3;
+}
+
+^contentpage {
+    background-color: #17171a;
+}
+
+scrollview {
+    background-color: #17171a;
+}
+
+label {
+    color: #C3C3C3;
+    font-size: 15;
+}
+
+button {
+    background-color: #512BD4;
+    color: #ffffff;
+    padding: 12;
+    margin: 4;
+}
+
+entry {
+    color: #C3C3C3;
+    margin: 4 0;
+}
+
+.page-title {
+    font-size: 28;
+    font-style: bold;
+    color: #e94560;
+    padding: 12 0;
+}
+
+.section-title {
+    font-size: 20;
+    font-style: bold;
+    color: #e94560;
+    padding: 8 0;
+}
+
+.card {
+    background-color: #222228;
+    padding: 16;
+    margin: 6 0;
+}
+
+.card-title {
+    font-size: 18;
+    font-style: bold;
+    color: #ffffff;
+}
+
+.card-subtitle {
+    font-size: 14;
+    color: #919191;
+}
+
+.student-row {
+    background-color: #2a2a35;
+    padding: 10;
+    margin: 3 0;
+}
+
+.student-name {
+    font-size: 16;
+    color: #C3C3C3;
+}
+
+.student-number {
+    font-size: 16;
+    font-style: bold;
+    color: #e94560;
+}
+
+.lucky-display {
+    font-size: 48;
+    font-style: bold;
+    color: #ffd700;
+}
+
+.pick-result {
+    font-size: 24;
+    font-style: bold;
+    color: #00ff88;
+    padding: 12;
+}
+
+.btn-primary {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #512BD4;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+.btn-pick {
+    background-color: #00cc66;
+    color: #ffffff;
+    font-size: 18;
+    font-style: bold;
+    padding: 14;
+}
+
+.empty-text {
+    color: #919191;
+    font-style: italic;
+    font-size: 16;
+    padding: 20;
+}
+
+.absent-label {
+    color: #ff6666;
+    font-style: italic;
+    font-size: 13;
+}
+
+.cooldown-label {
+    color: #ff9900;
+    font-size: 13;
+}
+
+.lucky-badge {
+    color: #ffd700;
+    font-style: bold;
+    font-size: 14;
+}
+
+.status-available {
+    color: #00cc66;
+    font-size: 13;
+}
+
+.info-text {
+    color: #919191;
+    font-size: 13;
+}
+
+#main-title {
+    font-size: 32;
+    font-style: bold;
+    color: #e94560;
+    padding: 16 0;
+}
+
+#lucky-value {
+    font-size: 52;
+    font-style: bold;
+    color: #ffd700;
+}
+
+#pick-result-text {
+    font-size: 26;
+    font-style: bold;
+    color: #00ff88;
+    padding: 8;
+}
+
+#lucky-section {
+    background-color: #222228;
+    padding: 16;
+    margin: 8 0;
+}
+
+#add-student-section {
+    background-color: #222228;
+    padding: 16;
+    margin: 8 0;
+}
+
+#attendance-header {
+    font-size: 18;
+    font-style: bold;
+    color: #e94560;
+    padding: 8 0;
+}
+
+#class-list-area {
+    padding: 8;
+}
+
+#pick-section {
+    background-color: #222228;
+    padding: 12;
+    margin: 8 0;
+}
+
+.card > label {
+    font-size: 16;
+    padding: 2 0;
+}
+
+.card > button {
+    margin: 6 0;
+}
+
+.student-row > label {
+    padding: 0 6;
+}
+
+#add-student-section > entry {
+    margin: 4 0;
+}
+
+#lucky-section > label {
+    padding: 4 0;
+}
+
+.card label {
+    color: #C3C3C3;
+}
+
+.student-row button {
+    font-size: 12;
+    padding: 6;
+    margin: 2;
+}
