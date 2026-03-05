@@ -33,7 +33,7 @@ namespace student_picker.Views
         {
             if (sender is Button btn && btn.CommandParameter is SchoolClass sc)
             {
-                await Shell.Current.GoToAsync($"classdetail?className={Uri.EscapeDataString(sc.Name)}");
+                await Shell.Current.GoToAsync($"classdetail?className={sc.Name}");
             }
         }
 
