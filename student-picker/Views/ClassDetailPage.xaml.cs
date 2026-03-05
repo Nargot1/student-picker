@@ -11,8 +11,7 @@ namespace student_picker.Views
         {
             set
             {
-                var decoded = Uri.UnescapeDataString(value ?? string.Empty);
-                _schoolClass = App.SchoolData.GetClassByName(decoded);
+                _schoolClass = App.SchoolData.GetClassByName(value);
                 if (_schoolClass != null)
                     BindingContext = _schoolClass;
             }
